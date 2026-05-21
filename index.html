@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.G.P. MELETOUDI P.C. | Premium Energy Retail & Fleet Solutions</title>
-    <meta name="description" content="Leading gasoline stations and fuel dealers based in Thraki, Greece. Providing premium energy retail and digital fleet management solutions.">
+    <title>D.G.P. MELETOUDI P.C. | Next-Gen Energy Retail & Smart Stations</title>
+    <meta name="description" content="Pioneering modern gasoline stations, eco-mobility, and digital retail solutions in Thraki, Greece.">
     <style>
-        /* DESIGN SYSTEM: MODERN ENERGY & AUTOMOTIVE TECH */
+        /* DESIGN SYSTEM: ECO-MOBILITY & NEXT-GEN RETAIL */
         :root {
-            --primary: #0A2540;         /* Deep Navy Blue */
-            --primary-light: #173A5E;
-            --accent: #0EA5E9;          /* Energy Cyan/Tech Blue */
-            --accent-hover: #0284C7;
-            --bg-base: #F8FAFC;         /* Light Slate Gray */
-            --bg-white: #FFFFFF;
-            --text-main: #334155;
-            --text-muted: #64748B;
-            --border-color: #E2E8F0;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --font-display: 'Montserrat', sans-serif;
+            --dark-bg: #0B1120;        /* Midnight Charcoal */
+            --dark-panel: #151F32;     /* Elevated Dark */
+            --emerald: #10B981;        /* Eco Energy Green */
+            --emerald-glow: rgba(16, 185, 129, 0.2);
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-line: #1E293B;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --font-tech: 'SFMono-Regular', Consolas, monospace;
         }
 
         * {
@@ -28,10 +26,10 @@
         }
 
         body {
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-base);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            color: var(--text-light);
+            background-color: var(--dark-bg);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -41,643 +39,484 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background: rgba(11, 17, 32, 0.9);
+            backdrop-filter: blur(12px);
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 3px solid var(--accent);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border-line);
         }
 
         .logo {
-            font-family: var(--font-display);
             font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span {
-            color: var(--accent);
-            font-weight: 400;
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--emerald);
+            border-radius: 4px;
+            transform: rotate(45deg);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-muted);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--emerald);
         }
 
-        /* 2. HERO SECTION */
+        /* 2. HERO SECTION (Diagonal Tech Style) */
         header {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             padding: 0 10%;
-            background: linear-gradient(135deg, rgba(10, 37, 64, 0.95) 0%, rgba(23, 58, 94, 0.95) 100%);
-            background-color: var(--primary);
             position: relative;
-            color: var(--bg-white);
+            background-color: var(--dark-bg);
             overflow: hidden;
         }
 
-        /* Abstract Highway/Speed Grid Background */
+        /* Diagonal background element */
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-panel) 0%, #080C17 100%);
+            transform: skewX(-15deg) translateX(20%);
+            border-left: 2px solid var(--border-line);
+            z-index: 0;
+        }
+
+        /* Tech dots pattern */
         header::before {
-            content: "";
+            content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 2px, transparent 2px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
-            background-size: 80px 80px;
-            pointer-events: none;
+            background-image: radial-gradient(var(--border-line) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
             z-index: 0;
-            transform: perspective(600px) rotateX(60deg);
-            transform-origin: bottom;
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
-            max-width: 900px;
+            max-width: 700px;
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(14, 165, 233, 0.15);
-            color: var(--accent);
-            padding: 8px 24px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        .tech-badge {
+            font-family: var(--font-tech);
+            color: var(--emerald);
+            font-size: 0.8rem;
             letter-spacing: 2px;
-            margin-bottom: 30px;
-            border: 1px solid var(--accent);
-            font-family: var(--font-display);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: inline-block;
+            background: var(--emerald-glow);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
 
         header h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.15;
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 25px;
             letter-spacing: -1px;
         }
 
         header p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            color: #E2E8F0;
-            max-width: 700px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
             margin-bottom: 40px;
-            font-weight: 400;
-            line-height: 1.6;
+            max-width: 600px;
         }
 
-        .btn-primary {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--bg-white);
-            padding: 16px 40px;
-            border-radius: 4px;
+        .btn-emerald {
+            background: var(--emerald);
+            color: var(--dark-bg);
+            padding: 16px 35px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
-            border: 2px solid var(--accent);
+            display: inline-block;
+            border: 2px solid var(--emerald);
         }
 
-        .btn-primary:hover {
+        .btn-emerald:hover {
             background: transparent;
-            color: var(--accent);
+            color: var(--emerald);
+            box-shadow: 0 0 20px var(--emerald-glow);
         }
 
-        /* 3. ABOUT SECTION */
+        /* 3. CORPORATE PROFILE */
         .section {
-            padding: 100px 10%;
+            padding: 120px 10%;
+            position: relative;
+            z-index: 2;
+            background: var(--dark-bg);
         }
 
-        .bg-white {
-            background-color: var(--bg-white);
-        }
-
-        .section-header {
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-header .line {
-            width: 80px;
-            height: 4px;
-            background: var(--accent);
-        }
-
-        .about-grid {
+        .grid-2 {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 60px;
             align-items: center;
         }
 
-        .about-text {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-        }
-
-        .about-text p {
+        .sec-title {
+            font-size: 2.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            text-align: justify;
         }
 
-        .highlight-box {
-            background: var(--bg-base);
+        .sec-title span {
+            color: var(--emerald);
+        }
+
+        .info-card {
+            background: var(--dark-panel);
             padding: 40px;
-            border-radius: 8px;
-            border-left: 6px solid var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
         }
 
-        /* 4. RETAIL & FUEL EXPERTISE */
+        .info-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--emerald);
+        }
+
+        /* 4. SERVICES */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .service-card {
-            background: var(--bg-white);
-            padding: 50px 40px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .srv-box {
+            background: linear-gradient(180deg, var(--dark-panel) 0%, var(--dark-bg) 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: var(--primary);
-            transition: background 0.3s;
-        }
-
-        .service-card:hover {
+        .srv-box:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--emerald);
         }
 
-        .service-card:hover::before {
-            background: var(--accent);
-        }
-
-        .service-icon {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--accent);
+        .srv-num {
+            font-family: var(--font-tech);
+            color: var(--text-muted);
+            font-size: 0.9rem;
             margin-bottom: 20px;
-            display: inline-block;
-            background: rgba(14, 165, 233, 0.1);
-            padding: 10px 15px;
-            border-radius: 4px;
+            display: block;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-            font-family: var(--font-display);
-            font-weight: 800;
+        /* 5. APP PROMO (CRUCIAL FOR GOOGLE PLAY CONSOLE) */
+        .app-section {
+            background: var(--dark-panel);
+            border-top: 1px solid var(--border-line);
+            border-bottom: 1px solid var(--border-line);
         }
 
-        /* 5. CORPORATE APP PROMO (CRITICAL FOR GOOGLE PLAY CONSOLE) */
-        .app-promo {
-            background: var(--primary);
-            color: var(--bg-white);
-            padding: 100px 10%;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .app-content h2 {
-            font-family: var(--font-display);
-            font-size: 2.8rem;
-            color: var(--bg-white);
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
             margin-bottom: 20px;
-            font-weight: 900;
         }
 
-        .app-content p {
-            font-size: 1.1rem;
-            color: #CBD5E1;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .feature-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-            color: #E2E8F0;
-        }
-
-        .feature-list li::before {
-            content: "►";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+        .check-icon {
+            color: var(--emerald);
+            font-weight: bold;
             font-size: 1.2rem;
             line-height: 1;
         }
 
-        .btn-outline {
-            display: inline-block;
-            background: transparent;
-            color: var(--accent);
-            padding: 15px 35px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px solid var(--accent);
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--bg-white);
-        }
-
-        .app-visual {
-            height: 100%;
-            min-height: 350px;
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(10, 37, 64, 0.8) 100%);
-            border: 2px dashed rgba(14, 165, 233, 0.4);
-            border-radius: 8px;
+        .app-ui-mockup {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(45deg, #0f172a, #1e293b);
+            border-radius: 30px;
+            border: 8px solid #334155;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 40px;
             position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        /* 6. CONTACT & CORPORATE INFO (MATCHES D&B EXACTLY) */
-        .contact-container {
+        .app-ui-mockup::before {
+            content: 'DGP SMARTSTATION \A [ READY TO REFUEL ]';
+            white-space: pre-wrap;
+            text-align: center;
+            font-family: var(--font-tech);
+            color: var(--emerald);
+            line-height: 2;
+        }
+
+        /* 6. CONTACT & DATA (MATCHES D&B) */
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
 
-        .corp-details {
-            background: var(--bg-white);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary);
+        .data-row {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-line);
         }
 
-        .corp-details h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            color: var(--primary);
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-
-        .detail-row {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .detail-row:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        .detail-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
+        .data-label {
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
             color: var(--text-muted);
-            font-weight: 700;
-            letter-spacing: 1px;
+            text-transform: uppercase;
             margin-bottom: 5px;
         }
 
-        .detail-value {
+        .data-val {
             font-size: 1.05rem;
-            color: var(--primary);
-            font-weight: 600;
-            line-height: 1.5;
+            font-weight: 500;
         }
 
-        .contact-form {
-            background: var(--bg-white);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-
-        .contact-form h3 {
-            font-family: var(--font-display);
-            font-size: 1.6rem;
-            margin-bottom: 30px;
-            color: var(--primary);
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-
-        .contact-form input, .contact-form textarea {
+        input, textarea {
             width: 100%;
+            background: var(--dark-panel);
+            border: 1px solid var(--border-line);
+            color: var(--text-light);
             padding: 16px;
             margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            background: var(--bg-base);
-            transition: border-color 0.3s;
+            border-radius: 6px;
+            font-family: var(--font-main);
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
+        input:focus, textarea:focus {
             outline: none;
-            border-color: var(--accent);
-            background: var(--bg-white);
+            border-color: var(--emerald);
         }
 
-        .contact-form textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            background: var(--primary);
-            color: var(--bg-white);
-            padding: 16px 0;
-            width: 100%;
-            border: none;
-            border-radius: 4px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .btn-submit:hover {
-            background: var(--primary-light);
-        }
-
-        /* 7. FOOTER & LEGAL */
+        /* 7. FOOTER */
         footer {
-            background: #061423;
-            color: #94A3B8;
+            background: #05080F;
             padding: 80px 10% 40px;
+            border-top: 1px solid var(--border-line);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 50px;
+            gap: 40px;
             margin-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding-bottom: 50px;
         }
 
         .footer-col h4 {
-            color: var(--bg-white);
-            font-size: 1.1rem;
+            color: var(--text-light);
             margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul a {
-            color: #94A3B8;
-            text-decoration: none;
             font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
             transition: color 0.3s;
         }
+        .footer-col a:hover { color: var(--emerald); }
 
-        .footer-col ul a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
+        .copyright {
             text-align: center;
+            color: var(--text-muted);
             font-size: 0.85rem;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-line);
         }
 
         @media (max-width: 992px) {
+            .grid-2, .contact-grid { grid-template-columns: 1fr; }
+            header::after { display: none; }
             .nav-links { display: none; }
-            .about-grid, .app-promo, .contact-container { grid-template-columns: 1fr; }
-            header h1 { font-size: 2.2rem; }
-            .app-promo { padding: 80px 5%; }
-            .app-visual { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">D.G.P. <span>MELETOUDI</span></div>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            D.G.P. MELETOUDI
+        </div>
         <div class="nav-links">
             <a href="#about">Corporate</a>
-            <a href="#sectors">Energy Retail</a>
-            <a href="#mobile-app">Fuel & Fleet App</a>
+            <a href="#stations">Station Network</a>
+            <a href="#app">Smart App</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header>
         <div class="hero-content">
-            <div class="hero-badge">Premium Fuel Dealers & Retail</div>
-            <h1>Powering Journeys Across Thraki.</h1>
-            <p>A leading enterprise in Greece providing high-quality gasoline station networks, reliable energy retail, and digital fleet management solutions.</p>
-            <a href="#mobile-app" class="btn-primary">Discover Our Digital Services</a>
+            <div class="tech-badge">Next-Gen Gasoline & Retail</div>
+            <h1>Refueling the Future of Thraki.</h1>
+            <p>Evolving traditional gasoline stations into smart, multi-energy retail hubs. Providing premium fuels, fleet services, and seamless digital payments across Greece.</p>
+            <a href="#app" class="btn-emerald">Get the SmartStation App</a>
         </div>
     </header>
 
-    <section id="about" class="section bg-white">
-        <div class="section-header">
-            <h2>Corporate Overview</h2>
-            <div class="line"></div>
-        </div>
-        <div class="about-grid">
-            <div class="about-text">
-                <p><strong>D.G.P. MELETOUDI P.C.</strong> (Doing Business As: D.G.P. MELETOUDI M.I.K.E.) is a prominent energy retail enterprise established in Didymoteicho, Thraki, Greece. Guided by our Key Principal, George George Meletoudis, we have built a trusted network within the Gasoline Stations and Fuel Dealers sector.</p>
-                <p>We are more than just a fuel provider. Operating within the broader Retail Trade sector, our service stations act as comprehensive retail hubs, ensuring that both commercial fleet drivers and everyday consumers receive top-tier fuels, automotive accessories, and convenience goods securely and efficiently.</p>
-            </div>
-            <div class="highlight-box">
-                <h3 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 15px; text-transform: uppercase; font-family: var(--font-display); font-weight: 800;">Strategic Energy Retail</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">Our corporate strategy focuses on the modernization of gasoline service stations. We are actively integrating smart technology to streamline fuel dispensing, B2B fleet invoicing, and customer loyalty programs across our Greek network.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="sectors" class="section">
-        <div class="section-header">
-            <h2>Our Operational Focus</h2>
-            <div class="line"></div>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">[ EN-01 ]</div>
-                <h3>Gasoline Stations</h3>
-                <p>Operation of modern, safe, and efficient service stations providing premium unleaded fuels, diesel, and alternative energy options for everyday drivers.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">[ EN-02 ]</div>
-                <h3>Commercial Fuel Dealing</h3>
-                <p>B2B fuel distribution and fleet management solutions. We supply high-volume fuel for logistics companies with transparent pricing and detailed invoicing.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">[ EN-03 ]</div>
-                <h3>Convenience Retail</h3>
-                <p>Integrated retail trade within our stations, offering automotive parts, travel accessories, and a wide selection of convenience goods for travelers.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="mobile-app" class="app-promo">
-        <div class="app-content">
-            <h2>D.G.P. Fuel & Fleet App</h2>
-            <p>To modernize the fueling experience and provide advanced B2B fleet solutions, <strong>D.G.P. MELETOUDI P.C. has launched a proprietary mobile application published on the Google Play Store.</strong></p>
-            <p>The <em>D.G.P. Fuel & Fleet</em> app is designed for both individual drivers and corporate fleet managers. It enables contactless payments directly at the pump, digital loyalty points tracking, and real-time fuel consumption reports for logistics companies.</p>
-            
-            <ul class="feature-list">
-                <li>Contactless mobile payments directly at the fuel pump.</li>
-                <li>Digital loyalty card integration and reward points tracking.</li>
-                <li>B2B Fleet Portal: manage driver limits and digital invoices.</li>
-                <li>Interactive map locating the nearest operational D.G.P. stations.</li>
-            </ul>
-            
-            <a href="#contact" class="btn-outline">Google Play Developer Support</a>
-        </div>
-        <div class="app-visual">
-            <div style="text-align: left; width: 100%;">
-                <p style="color: var(--accent); font-family: monospace; font-size: 0.9rem; margin-bottom: 10px;">> INIT DGP_FUEL_SYSTEM</p>
-                <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 0.85rem; line-height: 1.8;">
-                    CONNECTING TO STATION PUMPS... [OK]<br>
-                    VERIFYING FLEET ACCOUNTS... [OK]<br>
-                    SYNCING LOYALTY DATABASE... [OK]<br>
-                    <br>
-                    <span style="color: #4ADE80;">MOBILE PAYMENT GATEWAY ONLINE</span>
+    <section id="about" class="section">
+        <div class="grid-2">
+            <div>
+                <h2 class="sec-title">Entity <span>Profile</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px;">
+                    <strong>D.G.P. MELETOUDI P.C.</strong> (Doing Business As: D.G.P. MELETOUDI M.I.K.E.) is a leading enterprise in the Greek energy retail sector. Headquartered in Didymoteicho, Thraki, we manage a strategic network of modern gasoline service stations.
+                </p>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">
+                    Under the leadership of Key Principal George George Meletoudis, we bridge the gap between traditional fuel dealing and modern retail trade. Our facilities are designed to service commercial fleets, daily commuters, and integrate the latest in convenience retail technology.
                 </p>
             </div>
+            <div class="info-card">
+                <h3>Industry Classification</h3>
+                <ul style="color: var(--text-muted); line-height: 1.8; list-style-position: inside;">
+                    <li>Gasoline Stations</li>
+                    <li>Gasoline Stations and Fuel Dealers</li>
+                    <li>Retail Trade</li>
+                    <li>Gasoline service stations</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section bg-white">
-        <div class="section-header">
-            <h2>Corporate Verification & Contact</h2>
-            <div class="line"></div>
+    <section id="stations" class="section" style="padding-top: 0;">
+        <h2 class="sec-title" style="text-align: center; margin-bottom: 50px;">Operational <span>Network</span></h2>
+        <div class="services-grid">
+            <div class="srv-box">
+                <span class="srv-num">01 / FUEL RETAIL</span>
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Premium Gasoline & Diesel</h3>
+                <p style="color: var(--text-muted);">High-performance fuels engineered for modern engines, ensuring optimal mileage and engine protection for both consumer and commercial vehicles.</p>
+            </div>
+            <div class="srv-box">
+                <span class="srv-num">02 / B2B LOGISTICS</span>
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Fleet Fueling Programs</h3>
+                <p style="color: var(--text-muted);">Dedicated corporate accounts providing logistics companies with digital invoicing, customized credit limits, and detailed consumption analytics.</p>
+            </div>
+            <div class="srv-box">
+                <span class="srv-num">03 / CONVENIENCE</span>
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px;">Automotive Retail Stores</h3>
+                <p style="color: var(--text-muted);">Integrated station shops supplying essential automotive parts, high-quality lubricants, travel accessories, and driver refreshments.</p>
+            </div>
         </div>
-        
-        <div class="contact-container">
-            <div class="corp-details">
-                <h3>Entity Registration</h3>
+    </section>
+
+    <section id="app" class="section app-section">
+        <div class="grid-2">
+            <div>
+                <div class="tech-badge">Google Play Publisher</div>
+                <h2 class="sec-title">DGP SmartStation <span>App</span></h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">
+                    To eliminate pump queues and streamline corporate fleet management, <strong>D.G.P. MELETOUDI P.C. has launched a proprietary B2C/B2B application.</strong> Our app digitizes the entire refueling process across our network.
+                </p>
                 
-                <div class="detail-row">
-                    <div class="detail-label">Legal Entity Name</div>
-                    <div class="detail-value">D.G.P. MELETOUDI P.C.<br><span style="font-size:0.85rem; font-weight:normal;">(DBA: D.G.P. MELETOUDI M.I.K.E.)</span></div>
-                </div>
-
-                <div class="detail-row">
-                    <div class="detail-label">Key Principal</div>
-                    <div class="detail-value">George George Meletoudis</div>
-                </div>
-
-                <div class="detail-row">
-                    <div class="detail-label">Industry Classifications</div>
-                    <div class="detail-value" style="font-size: 0.95rem;">
-                        • Gasoline Stations<br>
-                        • Gasoline Stations and Fuel Dealers<br>
-                        • Retail Trade<br>
-                        • Gasoline service stations
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong style="color: var(--text-light);">Contactless Pump Payments</strong>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Authorize and pay for fuel directly from your smartphone without visiting the cashier.</p>
                     </div>
                 </div>
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong style="color: var(--text-light);">Fleet Manager Portal</strong>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Corporate clients can assign digital fuel cards to drivers and track expenses in real-time.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong style="color: var(--text-light);">Convenience Pre-Order</strong>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Order coffee and retail items ahead of time for fast pickup during your fuel stop.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="app-ui-mockup">
+                </div>
+        </div>
+    </section>
 
-                <div class="detail-row">
-                    <div class="detail-label">Registered Headquarters</div>
-                    <div class="detail-value">
+    <section id="contact" class="section">
+        <h2 class="sec-title" style="margin-bottom: 50px;">Corporate <span>Registry</span></h2>
+        <div class="contact-grid">
+            <div class="info-card">
+                <div class="data-row">
+                    <div class="data-label">Official Legal Entity</div>
+                    <div class="data-val">D.G.P. MELETOUDI P.C.</div>
+                </div>
+                <div class="data-row">
+                    <div class="data-label">Doing Business As (DBA)</div>
+                    <div class="data-val">D.G.P. MELETOUDI M.I.K.E.</div>
+                </div>
+                <div class="data-row">
+                    <div class="data-label">Key Principal</div>
+                    <div class="data-val">George George Meletoudis</div>
+                </div>
+                <div class="data-row">
+                    <div class="data-label">Registered Address</div>
+                    <div class="data-val">
                         Vrysika Metaxadon 68300<br>
                         Didymoteicho, Thraki<br>
                         Greece
                     </div>
                 </div>
-
-                <div class="detail-row">
-                    <div class="detail-label">Official Communication</div>
-                    <div class="detail-value" style="color: var(--primary);">info@dgpmeletoudi.com</div>
+                <div class="data-row" style="border-bottom: none;">
+                    <div class="data-label">Digital Support & Inquiries</div>
+                    <div class="data-val" style="color: var(--emerald);">info@dgpmeletoudi.com</div>
                 </div>
             </div>
-
-            <div class="contact-form">
-                <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--primary);">Direct Inquiry</h3>
+            
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Direct Communication</h3>
                 <form onsubmit="event.preventDefault();">
-                    <input type="text" placeholder="Full Name / Company Name" required>
-                    <input type="email" placeholder="Corporate Email" required>
-                    <input type="text" placeholder="Subject (e.g., Fleet Account, App Support)">
-                    <textarea placeholder="How can our energy retail or app support team assist you?" required></textarea>
-                    <button type="submit" class="btn-submit">Send Official Request</button>
+                    <input type="text" placeholder="Full Name / Fleet Company" required>
+                    <input type="email" placeholder="Business Email" required>
+                    <textarea placeholder="Specify your inquiry (e.g., Fleet Account Setup, App Support)..." rows="4" required></textarea>
+                    <button type="submit" class="btn-emerald" style="width: 100%;">Submit Inquiry</button>
                 </form>
             </div>
         </div>
@@ -686,32 +525,35 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <div class="logo" style="color: var(--bg-white); margin-bottom: 20px; font-size: 1.2rem;">D.G.P. <span style="color: var(--accent);">MELETOUDI</span></div>
-                <p>Driving the future of energy retail and digital fuel management in Thraki, Greece.</p>
+                <div class="logo" style="margin-bottom: 20px; font-size: 1.1rem;">
+                    <div class="logo-icon" style="width: 16px; height: 16px;"></div>
+                    D.G.P. MELETOUDI
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                    Advancing the retail fuel industry in Greece through digital integration and premium station services.
+                </p>
             </div>
-            
             <div class="footer-col">
-                <h4>Mobile App Support</h4>
+                <h4>App Developer Policies</h4>
                 <ul>
-                    <li><a href="#">Google Play Publisher Profile</a></li>
-                    <li><a href="#">Report an App Bug / Payment Issue</a></li>
-                    <li><a href="#"><strong>Request Account & Data Deletion</strong></a></li>
-                    <li><a href="#">App User Guide (B2B/B2C)</a></li>
+                    <li><a href="#">Google Play Publisher Status</a></li>
+                    <li><a href="#">Report App & Payment Bugs</a></li>
+                    <li><a href="#" style="color: var(--text-light);"><strong>Request Account & Data Deletion</strong></a></li>
+                    <li><a href="#">App Permissions (Location/Camera)</a></li>
                 </ul>
             </div>
-            
             <div class="footer-col">
-                <h4>Legal & Compliance</h4>
+                <h4>Legal Framework</h4>
                 <ul>
                     <li><a href="#">Terms of Service (Fuel Retail)</a></li>
-                    <li><a href="#">Privacy Policy (GDPR Compliant)</a></li>
-                    <li><a href="#">Fleet Supply Agreements</a></li>
+                    <li><a href="#">Privacy Policy (GDPR)</a></li>
+                    <li><a href="#">B2B Fleet Credit Agreements</a></li>
                     <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 D.G.P. MELETOUDI P.C. Registered in Greece. All rights reserved.</p>
+        <div class="copyright">
+            &copy; 2026 D.G.P. MELETOUDI P.C. Registered in Greece. All rights reserved.
         </div>
     </footer>
 
